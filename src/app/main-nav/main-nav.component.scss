@@ -10,6 +10,10 @@
   box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
 }
 
+.app-name {
+  text-decoration: none;
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
@@ -44,9 +48,7 @@
   .icon {
     display: none;
   }
-  // .hidden {
-  //   display: hide;
-  // }
+
   .mat-icon {
     color: whitesmoke;
     margin: 0 auto;
