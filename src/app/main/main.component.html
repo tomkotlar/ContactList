@@ -1,1 +1,31 @@
-<p>main works!</p>
+<div *ngIf="!user">
+    <mat-spinner color="accent"></mat-spinner>
+    <h1 class="mat-caption">Loading</h1>
+</div>
+
+<div *ngIf="user">
+    <mat-card>
+        <mat-card-header>
+            <mat-icon svgIcon="{{ user.avatar }}"> </mat-icon>
+            <mat-card-title> {{ user.name }} </mat-card-title>
+            <mat-card-subtitle>
+                {{ user.birthDate | date: "d LLLL" }}
+            </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <mat-tab-group mat-align-tabs="start">
+                <mat-tab label="Bio">
+                    <p class="bio">
+                        {{ user.bio }}
+                    </p>
+                </mat-tab>
+
+                <mat-tab label="Notes" color="accent">
+                    <app-notes [notes]="user.notes"></app-notes>
+                </mat-tab>
+                <mat-tab label="Third"> Content 3 </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>
